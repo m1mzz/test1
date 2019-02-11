@@ -46,7 +46,9 @@ module.exports = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [
+    '~/plugins/gmap',
+  ],
 
   /*
    ** Nuxt.js modules
@@ -79,6 +81,7 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-    }
+    },
+    transpile: [/^vue2-google-maps($|\/)/]
   }
 }

@@ -7,9 +7,9 @@
     <div class="row">
       <div class="col">
         <p
-          class="mt2"
+          class="mt-2"
         >GMS understands that it can be hard to follow all new technologies. We regularly provide for all our clients educational trainings to make your operator`s business earn more and better though our best practices.</p>
-        <a class="h3 highlight-text pt2" href="tel:+41 41 544 62 06">+41 41 544 62 06</a>
+        <a class="h3 highlight-text pt2" href="tel:+41415446206">+41 41 544 62 06</a>
       </div>
     </div>
   </section>

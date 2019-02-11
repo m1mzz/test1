@@ -4,6 +4,12 @@
   "description": "My pioneering Nuxt.js project",
   "author": "Roma Frolov",
   "private": true,
+  "config": {
+    "nuxt": {
+      "host": "0.0.0.0",
+      "port": "3333"
+    }
+  },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
@@ -16,7 +22,8 @@
     "@nuxtjs/axios": "^5.3.6",
     "cross-env": "^5.2.0",
     "normalize.css": "^8.0.1",
-    "nuxt": "^2.4.0"
+    "nuxt": "^2.4.0",
+    "vue2-google-maps": "^0.10.5"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^0.0.1",
