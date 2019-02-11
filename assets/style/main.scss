@@ -1,0 +1,22 @@
+/* 1. base styles ----------------------------------*/
+
+/* global variables */
+@import 'global/variables.scss';
+
+/* global mixins */
+@import 'global/mixins.scss';
+
+/* global styles */
+@import 'global/typography.scss';
+
+/* reset styles */
+@import 'global/reset.scss';
+
+/* layout styles */
+@import 'global/layout.scss';
+
+/* atomic styles */
+@import 'global/atomic.scss';
+
+/* other styles */
+@import 'global/other.scss';
