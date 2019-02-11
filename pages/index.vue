@@ -1,72 +1,83 @@
 <template>
-  <section class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        test_vintage
-      </h1>
-      <h2 class="subtitle">
-        My pioneering Nuxt.js project
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+  <div class="fake-body">
+    <div class="p20">
+      <div class="container">
+        <h1 class="h1">Contacts</h1>
+      </div>
+      <div>
+        <div class="container">
+          <div class="row pb">
+            <div class="col-6">
+              <Contacts/>
+            </div>
+            <div class="col-6">
+              <Support/>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
+    <div class="background-for-map">
+      <Offices/>
+    </div>
+    <div class="fake-footer background-pattern"></div>
+  </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-
+import Contacts from '~/components/page/contact/Contacts.vue'
+import Support from '~/components/page/contact/Support.vue'
+import Offices from '~/components/page/contact/Offices.vue'
 export default {
+  name: 'ContactPage',
   components: {
-    Logo
+    Contacts,
+    Support,
+    Offices
+  },
+  head() {
+    return {
+      title: 'Contact',
+      meta: [
+        { hid: 'og:title', name: 'og:title', content: 'About Our Company' },
+        { hid: 'og:type', name: 'og:type', content: 'article' },
+        {
+          hid: 'og:url',
+          name: 'og:url',
+          content: 'http://www.mysite.com/article/'
+        },
+        {
+          hid: 'og:image',
+          name: 'og:image',
+          content: 'http://www.mysite.com/articleimage.jpg'
+        },
+        {
+          hid: 'og:site_name',
+          name: 'og:site_name',
+          content: 'My Company Name'
+        },
+        { hid: 'fb:app_id', name: 'fb:app_id', content: '1234567890987654321' },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          content: 'A description of our services and company profile.'
+        }
+      ]
+    }
   }
 }
 </script>
 
 <style>
-.container {
-  margin: 0 auto;
+.fake-body {
   min-height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  flex-direction: column;
 }
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+.fake-footer {
+  flex: auto;
 }
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+.background-for-map {
+  background: #262626;
 }
 </style>

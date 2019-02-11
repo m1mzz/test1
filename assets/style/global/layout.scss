@@ -1,0 +1,23 @@
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: $screen-2x;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 (-$padding);
+}
+
+.col-6 {
+  flex: 50% 1 1;
+}
+
+.col,
+.col-6 {
+  padding: $padding;
+}

@@ -1,0 +1,117 @@
+.highlight-text {
+  color: $highlight-color !important;
+}
+
+.d-i-block {
+  display: inline-block;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap;
+
+  &-md {
+    @include media-breakpoint-up($screen-md) {
+      flex-wrap: nowrap;
+    }
+  }
+}
+
+.p1 {
+  padding: $padding/3;
+}
+
+.p2 {
+  padding: $padding/2;
+}
+
+.p3 {
+  padding: $padding;
+}
+
+.p4 {
+  padding: $padding + $padding/3;
+}
+
+.p5 {
+  padding: $padding + 2*$padding/3;
+}
+
+.p10 {
+  padding: $padding*2;
+}
+
+.p20 {
+  padding: $padding*3;
+
+  &-md {
+    @include media-breakpoint-up($screen-md) {
+      padding: $padding*3;
+    }
+  }
+}
+
+.pt1 {
+  padding-top: $padding/3;
+}
+
+.pt2 {
+  padding-top: $padding/2;
+}
+
+.pt3 {
+  padding-top: $padding;
+}
+
+.mt1 {
+  margin-top: $padding/3;
+}
+
+.mt2 {
+  margin-top: $padding/2;
+}
+
+.mt3 {
+  margin-top: $padding;
+}
+
+
+.p0 {
+  padding: 0;
+}
+
+.m0 {
+  margin: 0;
+}
+
+
+.mw-300 {
+  min-width: 300px;
+
+  &-lg-down {
+    @include media-breakpoint-down($screen-lg) {
+      min-width: 300px;
+    }
+  }
+}
+
+.fstyle-normal {
+  font-style: normal;
+}
+
+.fs-inherit {
+  font-size: inherit !important;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.upper {
+  text-transform: uppercase;
+}
+
+.background-pattern {
+  background-image: radial-gradient(circle, #6bc78a 2px, transparent 3px);
+  background-size: 90px 70px;
+  background-color: $highlight-color;
+}
