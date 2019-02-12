@@ -20,7 +20,7 @@
             </div>
           </div>
         </div>
-        <div class="col-6 p-0 map-min-height" :class="{'pos-rel': fullWidth}">
+        <div class="col-6 p-0 map-min-height mw-300" :class="{'pos-rel': fullWidth}">
           <div class="gmap-container map-min-height" :class="{gmapFullWidth: fullWidth}">
             <GmapMap
               :center="coords"

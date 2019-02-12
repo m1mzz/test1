@@ -20,7 +20,7 @@
         </div>
         <input v-model="agree" id="agree" type="checkbox" class="custom-checkbox visually-hidden" name="agree">
         <label for="agree" class="fs-18">I agree the processing of personal data</label>
-        <button type="submit" class="send-btn btn-reset bold upper mt-20" :disabled="disabledSubmit">
+        <button type="submit" class="send-btn btn-reset bold upper mt-20" :disabled="disabledSubmit && !withoutJs">
           Get in touch<span v-if="sending" class="spin"></span></button>
         <span v-if="errorSend || successSend" class="h4 bold ml-10 d-i-block">
           Send
@@ -46,7 +46,7 @@ export default {
   },
   data() {
     return {
-      sendUrl: 'http://httpbin.org/post',
+      sendUrl: 'https://httpbin.org/post',
       form: {
         Name: {
           value: '',
@@ -73,12 +73,12 @@ export default {
       agree: false,
       sending: false,
       errorSend: false,
-      successSend: false
+      successSend: false,
+      withoutJs: true
     }
   },
   computed: {
     disabledSubmit() {
-      if (process.server) return false
       if (!this.agree) return true
       for (const key in this.form) {
         const item = this.form[key]
@@ -94,6 +94,11 @@ export default {
       const item = this.form[key]
       Vue.set(item, 'error', false)
       Vue.set(item, 'activated', false)
+    }
+  },
+  mounted() {
+    if (process.browser) {
+      this.withoutJs = false
     }
   },
   methods: {
