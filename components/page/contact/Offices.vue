@@ -2,7 +2,7 @@
   <div :class="{'theme-dark': themeDark}" class="of-hidden pl-20-md pr-20-md">
     <section class="container">
       <div class="row">
-        <div class="col-6 big-padding">
+        <div class="col-6 big-padding py-5-md-down">
           <h2 class="h2">Our Offices</h2>
           <ul class="tab-head list-reset row">
             <li v-for="({}, name) in tabs" :key="name" class="d-i-block">
@@ -16,7 +16,7 @@
           <div class="tab-body">
             <div v-for="({title, address}, name) in tabs" v-show="name === activeTab" :key="name">
               <h3 class="h3">{{ title }}</h3>
-              <p v-html="address" />
+              <p v-html="address"/>
             </div>
           </div>
         </div>
@@ -121,6 +121,10 @@ export default {
 .big-padding {
   padding-top: 90px;
   padding-bottom: 140px;
+  @media (max-width: 600px) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
 }
 .tab-btn {
   font-size: 11px;

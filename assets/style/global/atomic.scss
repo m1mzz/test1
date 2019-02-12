@@ -45,19 +45,19 @@
 }
 
 .p-5 {
-  padding: $padding + 2*$padding/3;
+  padding: $padding + 2 * $padding/3;
 }
 
 .p-10 {
-  padding: $padding*2;
+  padding: $padding * 2;
 }
 
 .p-20 {
-  padding: $padding*3;
+  padding: $padding * 3;
 
   &-md {
     @include media-breakpoint-up($screen-md) {
-      padding: $padding*3;
+      padding: $padding * 3;
     }
   }
 }
@@ -87,11 +87,11 @@
 }
 
 .mt-20 {
- margin-top: $padding*3;
+  margin-top: $padding * 3;
 }
 
 .ml-10 {
- margin-left: $padding*2;
+  margin-left: $padding * 2;
 }
 
 .mb-2 {
@@ -99,39 +99,44 @@
 }
 
 .pl-10 {
-  padding-left: $padding*2;
+  padding-left: $padding * 2;
   &-md {
     @include media-breakpoint-up($screen-md) {
-      padding-left: $padding*2;
+      padding-left: $padding * 2;
     }
   }
- }
+}
 
 .pl-20 {
-  padding-left: $padding*3;
+  padding-left: $padding * 3;
   &-md {
     @include media-breakpoint-up($screen-md) {
-      padding-left: $padding*3;
+      padding-left: $padding * 3;
     }
   }
 }
 
 .pr-10 {
-  padding-right: $padding*2;
+  padding-right: $padding * 2;
   &-md {
     @include media-breakpoint-up($screen-md) {
-      padding-right: $padding*2;
+      padding-right: $padding * 2;
     }
   }
- }
+}
 
 .pr-20 {
-  padding-right: $padding*3;
+  padding-right: $padding * 3;
   &-md {
     @include media-breakpoint-up($screen-md) {
-      padding-right: $padding*3;
+      padding-right: $padding * 3;
     }
   }
+}
+
+.py-10 {
+  padding-top: $padding * 2;
+  padding-bottom: $padding * 2;
 }
 
 .pt-0 {
@@ -141,7 +146,6 @@
 .p-0 {
   padding: 0;
 }
-
 
 .m-0 {
   margin: 0;
@@ -155,7 +159,7 @@
   min-width: 300px;
 
   &-lg-down {
-    @include media-breakpoint-down($screen-lg) {
+    @include media-breakpoint-down($screen-lg - 1) {
       min-width: 300px;
     }
   }
@@ -170,7 +174,7 @@
 }
 
 .fs-18 {
-  font-size: 18px
+  font-size: 18px;
 }
 
 .bold {

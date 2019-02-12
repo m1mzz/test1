@@ -4,12 +4,6 @@
   "description": "My pioneering Nuxt.js project",
   "author": "Roma Frolov",
   "private": true,
-  "config": {
-    "nuxt": {
-      "host": "0.0.0.0",
-      "port": "3333"
-    }
-  },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",

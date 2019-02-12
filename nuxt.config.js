@@ -8,7 +8,8 @@ module.exports = {
    */
   head: {
     title: pkg.name,
-    meta: [{
+    meta: [
+      {
         charset: 'utf-8'
       },
       {
@@ -21,34 +22,31 @@ module.exports = {
         content: pkg.description
       }
     ],
-    link: [{
-      rel: 'icon',
-      type: 'image/x-icon',
-      href: '/favicon.ico'
-    }]
+    link: [
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/favicon.ico'
+      }
+    ]
   },
 
   /*
    ** Customize the progress-bar color
    */
   loading: {
-    color: '#fff'
+    color: '#6bc78a'
   },
 
   /*
    ** Global CSS
    */
-  css: [
-    'normalize.css',
-    '@/assets/style/main.scss',
-  ],
+  css: ['normalize.css', '@/assets/style/main.scss'],
 
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [
-    '~/plugins/gmap',
-  ],
+  plugins: ['~/plugins/gmap'],
 
   /*
    ** Nuxt.js modules

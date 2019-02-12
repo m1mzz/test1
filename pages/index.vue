@@ -8,18 +8,18 @@
         <div class="container">
           <div class="row pb">
             <div class="col-6 pr-20-md">
-              <Contacts />
+              <Contacts/>
             </div>
             <div class="col-6 pl-20-md">
-              <Support />
+              <Support/>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <Offices />
+    <Offices/>
     <div class="p-20-md fake-footer background-pattern">
-      <ContactUs />
+      <ContactUs/>
     </div>
   </div>
 </template>
@@ -41,6 +41,11 @@ export default {
     return {
       title: 'Contact',
       meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'My custom description'
+        },
         { hid: 'og:title', name: 'og:title', content: 'About Our Company' },
         { hid: 'og:type', name: 'og:type', content: 'article' },
         {

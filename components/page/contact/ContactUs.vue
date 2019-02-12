@@ -1,13 +1,8 @@
 <template>
-  <section id="contact_form" class="container big-padding text-white">
+  <section id="contact_form" class="container py-10 text-white">
     <h2 class="h2">Contact Us</h2>
     <div class="row">
-      <form
-        class="col-6 pr-10-md"
-        :action="sendUrl"
-        method="post"
-        @submit.prevent="onSubmit"
-      >
+      <form class="col-6 pr-10-md" :action="sendUrl" method="post" @submit.prevent="onSubmit">
         <div v-for="(input, name) in form" :key="name">
           <ContactInput
             :name="name"
@@ -18,20 +13,32 @@
             @onInput="onInput"
           />
         </div>
-        <input v-model="agree" id="agree" type="checkbox" class="custom-checkbox visually-hidden" name="agree">
+        <input
+          v-model="agree"
+          id="agree"
+          type="checkbox"
+          class="custom-checkbox visually-hidden"
+          name="agree"
+        >
         <label for="agree" class="fs-18">I agree the processing of personal data</label>
-        <button type="submit" class="send-btn btn-reset bold upper mt-20" :disabled="disabledSubmit && !withoutJs">
-          Get in touch<span v-if="sending" class="spin"></span></button>
+        <button
+          type="submit"
+          class="send-btn btn-reset bold upper mt-20"
+          :disabled="disabledSubmit"
+        >
+          Get in touch
+          <span v-if="sending" class="spin"></span>
+        </button>
         <span v-if="errorSend || successSend" class="h4 bold ml-10 d-i-block">
           Send
-          {{ successSend ? 'Succes' : '' }}
-          {{ errorSend ? 'Error' : '' }}
+          {{ successSend ? 'success' : '' }}
+          {{ errorSend ? 'error' : '' }}
         </span>
       </form>
       <div class="col-6 pl-10-md">
-        <p class="text-black mt-2 fs-18">
-          Please tell us more about your request and give us info about your company and country
-        </p>
+        <p
+          class="text-black mt-2 fs-18"
+        >Please tell us more about your request and give us info about your company and country</p>
       </div>
     </div>
   </section>
@@ -79,6 +86,7 @@ export default {
   },
   computed: {
     disabledSubmit() {
+      if (this.withoutJs) return false
       if (!this.agree) return true
       for (const key in this.form) {
         const item = this.form[key]
@@ -166,41 +174,6 @@ export default {
   &:focus {
     outline: none;
     border-bottom: 3px solid #fff;
-  }
-}
-.big-padding {
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
-.custom-checkbox {
-  + label {
-    padding-left: 30px;
-    position: relative;
-    display: block;
-
-    &:before {
-      position: absolute;
-      content: '';
-      top: 50%;
-      left: 0;
-      transform: translateY(-50%);
-      width: 15px;
-      height: 15px;
-      background: #fff;
-    }
-  }
-
-  &:focus + label {
-    color: #000;
-    text-decoration: underline;
-  }
-
-  &:checked {
-    + label {
-      &:before {
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1' viewBox='0 0 1000 1000'%3E%3Cpath d='M729 231c-3 1-8 4-10 7L566 467 415 695c-2 1-20-20-73-84-39-48-73-88-76-89-9-5-19-5-28-1-15 8-21 26-14 40a3560 3560 0 0 0 180 216c8 4 21 3 29-3 5-3 43-60 233-346l105-159v-10c0-12-3-18-13-26-6-4-22-6-29-2z'/%3E%3C/svg%3E");
-      }
-    }
   }
 }
 </style>

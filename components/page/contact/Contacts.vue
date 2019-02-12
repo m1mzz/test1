@@ -28,10 +28,7 @@
           </li>
           <li>
             <p class="fs-inherit m-0">Send form</p>
-            <a
-              class="bold highlight-text upper"
-              href="#contact_form"
-            >Contact us</a>
+            <a class="bold highlight-text upper" href="#contact_form">Contact us</a>
           </li>
         </ul>
       </div>
