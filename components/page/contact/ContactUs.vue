@@ -44,6 +44,7 @@
   </section>
 </template>
 <script>
+import pattern from '~/assets/js/RegExpPattern'
 import ContactInput from '@/components/wrapper/ContactInput'
 import Vue from 'vue'
 export default {
@@ -58,21 +59,19 @@ export default {
         Name: {
           value: '',
           errorMsg: 'Enter valid name',
-          pattern: /^[а-яА-ЯёЁa-zA-Z0-9]+$/,
+          pattern: pattern.name,
           type: 'text'
         },
         Phone: {
           value: '',
           errorMsg: 'Enter valid phone',
-          // eslint-disable-next-line
-          pattern: /^(?:(?:\(?(?:00|\+)([1-4]\d\d|[1-9]\d?)\)?)?[\-\.\ \\\/]?)?((?:\(?\d{1,}\)?[\-\.\ \\\/]?){0,})(?:[\-\.\ \\\/]?(?:#|ext\.?|extension|x)[\-\.\ \\\/]?(\d+))?$/,
+          pattern: pattern.phone,
           type: 'tel'
         },
         'E-mail': {
           value: '',
           errorMsg: 'Enter valid e-mail',
-          // eslint-disable-next-line
-          pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+          pattern: pattern.email,
           type: 'email'
         }
       },
@@ -105,9 +104,7 @@ export default {
     }
   },
   mounted() {
-    if (process.browser) {
-      this.withoutJs = false
-    }
+    this.withoutJs = false
   },
   methods: {
     onInput(name, value) {
